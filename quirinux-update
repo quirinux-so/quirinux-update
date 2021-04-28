@@ -3,7 +3,7 @@
 # Nombre:	quirinux-update
 # Autor:	Charlie Martínez® <cmartinez@quirinux.org>
 # Licencia:	https://www.gnu.org/licenses/gpl-3.0.txt
-# Descripción:	Lista de actualizaciones
+# Descripción:	Actualizador de Quirinux
 # Versión:	1.0
 
 _actualizar()
@@ -216,6 +216,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Salir" ]]; then
@@ -232,6 +233,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Update Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Exit" ]]; then
@@ -249,6 +251,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Aktualisieren Sie Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Verlassen" ]]; then
@@ -265,6 +268,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Atualizar Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Sair" ]]; then
@@ -281,6 +285,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Aggiorna Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Partire" ]]; then
@@ -297,6 +302,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Salir" ]]; then
@@ -313,6 +319,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Обновить Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Покинуть" ]]; then
@@ -331,10 +338,21 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Mettre à jour Quirinux" ]]; then
 _actualizar
+-borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Sortir" ]]; then
 _salir
 fi
+
+# ===========================================================================================
+# FUNCION BORRAR TEMPORALES [CÓDIGO REUTILIZABLE]
+# ===========================================================================================
+
+function _borratemp()
+{
+sudo rm -rf /opt/tmp/*
+clear
+}
 
 _idioma

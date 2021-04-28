@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Nombre:	quirinux-update
+# Autor:	Charlie Martínez® <cmartinez@quirinux.org>
+# Licencia:	https://www.gnu.org/licenses/gpl-3.0.txt
+# Descripción:	Lista de actualizaciones
+# Versión:	1.0
+
+# ===========================================================================================
+# DOC EN CASTELLANO
+# ===========================================================================================
+
+# 
+# El actualizador de Quirinux descarga una copia fresca de este fichero y la guarda
+# en /usr/local/bin otorgándole permisos de ejecusión, lo que lo convierte en comando.
+# Los paquetes para actualizar se descargan y ejecutan a continuación, utilizando wget.
+# Ejemplo:
+# clear
+# sudo mkdir -p /opt/tmp/enve
+# sudo wget  --no-check-certificate 'http://my.opendesktop.org/s/GAyMB7pt5K9MXnx/download' -O /opt/tmp/enve/enve-0.0.1_amd64.deb
+# sudo apt install /opt/tmp/enve/./enve-0.0.1_amd64.deb -y
+
+# ===========================================================================================
+# UPDATES
+# ===========================================================================================
+
+# 28-04-2021
+
+# No updates availables.
