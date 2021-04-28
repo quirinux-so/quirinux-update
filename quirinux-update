@@ -216,12 +216,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Salir" ]]; then
 _salir
 fi
+
+}
 
 function _menuPrincipal_en()
 {
@@ -233,7 +235,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Update Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Exit" ]]; then
@@ -251,12 +253,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Aktualisieren Sie Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Verlassen" ]]; then
 _salir
 fi
+
+}
 
 function _menuPrincipal_pt()
 {
@@ -268,12 +272,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Atualizar Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Sair" ]]; then
 _salir
 fi
+
+}
 
 function _menuPrincipal_it()
 {
@@ -285,12 +291,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Aggiorna Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Partire" ]]; then
 _salir
 fi
+
+}
 
 function _menuPrincipal_gl()
 {
@@ -302,12 +310,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Salir" ]]; then
 _salir
 fi
+
+}
 
 function _menuPrincipal_ru()
 {
@@ -319,12 +329,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Обновить Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Покинуть" ]]; then
 _salir
 fi
+
+}
 
 # Francés
 
@@ -338,12 +350,14 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 )
 if [[ $opPrincipal == "Mettre à jour Quirinux" ]]; then
 _actualizar
--borratemp
+_borratemp
 _fin_es
 fi
 if [[ $opPrincipal == "Sortir" ]]; then
 _salir
 fi
+
+}
 
 # ===========================================================================================
 # FUNCION BORRAR TEMPORALES [CÓDIGO REUTILIZABLE]
@@ -354,5 +368,18 @@ function _borratemp()
 sudo rm -rf /opt/tmp/*
 clear
 }
+
+# ===========================================================================================
+# FUNCION SALIR [CÓDIGO REUTILIZABLE]
+# ===========================================================================================
+
+function _salir()
+{
+
+clear
+exit 0
+
+}
+
 
 _idioma
