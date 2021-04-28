@@ -1,0 +1,340 @@
+#!/bin/bash
+
+# Nombre:	quirinux-update
+# Autor:	Charlie Martínez® <cmartinez@quirinux.org>
+# Licencia:	https://www.gnu.org/licenses/gpl-3.0.txt
+# Descripción:	Lista de actualizaciones
+# Versión:	1.0
+
+_actualizar()
+
+{
+
+# Utilizar esta función para descargar ficheros de actualización y ejecutarlos.
+# Una vez instaladas, muestra el saludo de despedida.
+# Si no hay actualización, simplemente muestra el saludo de despedida. 
+
+FILE="/usr/local/bin/updates"
+
+if [ -e ${FILE} ]; then
+
+sudo rm /usr/local/bin/updates
+
+fi 
+
+sudo wget --no-check-certificate 'https://www.quirinux.org/updates/updates' -O /usr/local/bin/updates
+sudo chmod 775 /usr/local/bin/updates
+updates
+
+}
+
+# =========================================================================================
+# INICIO / FIN (IDIOMAS) [CÓDIGO REUTILIZABLE]
+# =========================================================================================
+
+# Alemán
+function _inicio_de() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_de
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_de
+fi
+}
+function _fin_de()
+{
+zenity --info *text "Einstellungen vorgenommen. Sie können sie jederzeit umkehren. "
+}
+
+# Inglés
+function _inicio_en() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_en
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_en
+fi
+}
+function _fin_en()
+{
+zenity --info *text "Quirinux updated. "
+}
+
+# Castellano
+function _inicio_es() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_es
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_es
+fi
+}
+function _fin_es()
+{
+zenity --info *text "Quirinux actualizado."
+}
+
+# Francés
+function _inicio_fr() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_fr
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_fr
+fi
+}
+function _fin_fr()
+{
+zenity --info *text "Quirinux mis à jour."
+}
+
+# Galego
+function _inicio_gl() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_gl
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_gl
+fi
+}
+function _fin_gl()
+{
+zenity --info *text "Quirinux actualizado. "
+}
+
+# Italiano
+function _inicio_it () # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_it
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_it 
+fi
+}
+function _fin_it ()
+{
+zenity --info *text "Quirinux aggiornato."
+}
+
+# Portugués
+function _inicio_pt() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_pt
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_pt
+fi
+}
+function _fin_pt()
+{
+zenity --info *text "Quirinux atualizado. "
+}
+
+# Ruso
+function _inicio_ru() # Verifica si está instalado zenity
+{
+if [ -e "/usr/bin/zenity" ]; then # Está instalado, continúa
+_menuPrincipal_ru
+else # No está instalado zenity, lo instala y continúa
+_instalarZenity
+_menuPrincipal_ru
+fi
+}
+function _fin_ru()
+{
+zenity --info *text "Quirinux обновлен."
+}
+
+# =========================================================================================
+# SELECTOR DE IDIOMA [CÓDIGO REUTILIZABLE]
+# Esta sección fue tomada de Etertics GNU/Linux, 
+# @Autor: Javier Obregón (GPLv3)
+# =========================================================================================
+
+function _idioma() 
+
+{
+
+IDIOMA=$(echo $LANG | cut -d_ -f1) # Idioma del sistema
+
+if [[ $IDIOMA = "es" ]]
+then
+_inicio_es
+
+elif [[ $IDIOMA = "en" ]]
+then
+_inicio_en
+
+elif [[ $IDIOMA = "gl" ]]
+then
+_inicio_gl
+
+elif [[ $IDIOMA = "pt" ]]
+then
+_inicio_pt
+
+elif [[ $IDIOMA = "fr" ]]
+then
+_inicio_fr
+
+elif [[ $IDIOMA = "it" ]]
+then
+_inicio_it
+
+elif [[ $IDIOMA = "de" ]]
+then
+_inicio_de
+
+elif [[ $IDIOMA = "ru" ]]
+then
+_inicio_ru
+
+else
+_inicio_en
+fi
+
+}
+
+# =========================================================================================
+# CASTELLANO
+# =========================================================================================
+
+function _menuPrincipal_es()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Salir" ]]; then
+_salir
+fi
+
+function _menuPrincipal_en()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Update Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Exit" ]]; then
+_salir
+fi
+}
+
+function _menuPrincipal_de()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Aktualisieren Sie Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Verlassen" ]]; then
+_salir
+fi
+
+function _menuPrincipal_pt()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Atualizar Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Sair" ]]; then
+_salir
+fi
+
+function _menuPrincipal_it()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Aggiorna Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Partire" ]]; then
+_salir
+fi
+
+function _menuPrincipal_gl()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Salir" ]]; then
+_salir
+fi
+
+function _menuPrincipal_ru()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Обновить Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Покинуть" ]]; then
+_salir
+fi
+
+# Francés
+
+function _menuPrincipal_ru()
+{
+opPrincipal=$(
+zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
+--column="Opciones disponibles" \
+"Actualizar Quirinux" \
+"Salir" \
+)
+if [[ $opPrincipal == "Mettre à jour Quirinux" ]]; then
+_actualizar
+_fin_es
+fi
+if [[ $opPrincipal == "Sortir" ]]; then
+_salir
+fi
+
+_idioma
