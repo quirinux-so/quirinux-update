@@ -22,7 +22,7 @@ sudo rm /usr/local/bin/updates
 
 fi 
 
-sudo wget --no-check-certificate 'https://www.quirinux.org/updates/updates' -O /usr/local/bin/updates
+sudo wget --no-check-certificate 'https://www.quirinux.ga/updates/updates' -O /usr/local/bin/updates
 sudo chmod 775 /usr/local/bin/updates
 updates
 
