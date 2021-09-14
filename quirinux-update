@@ -215,6 +215,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" 'Atención !!' 'Por favor, no apages el equipo. El sistema te avisará cuando se hayan realizado las actualizaciones.'
 _actualizar
 _borratemp
 _fin_es
@@ -234,6 +235,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Update Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" 'Attention !!' "Please don't turn off the equipment. The system will notify you when the updates have been made."
 _actualizar
 _borratemp
 _fin_es
@@ -252,6 +254,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Aktualisieren Sie Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" 'Beachtung !!' 'Bitte schalten Sie das Gerät nicht aus. Das System benachrichtigt Sie, wenn die Aktualisierungen vorgenommen wurden.'
 _actualizar
 _borratemp
 _fin_es
@@ -271,6 +274,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Atualizar Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" 'Atenção !! '' Por favor, não desligue o equipamento. O sistema irá notificá-lo quando as atualizações forem feitas.'
 _actualizar
 _borratemp
 _fin_es
@@ -290,6 +294,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Aggiorna Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" 'Attenzione!!' "Si prega di non spegnere l'apparecchiatura. Il sistema ti avviserà quando gli aggiornamenti sono stati effettuati."
 _actualizar
 _borratemp
 _fin_es
@@ -309,6 +314,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Actualizar Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" 'Atención !!' 'Por favor, non apague o equipo. O sistema avisaralle cando se realizaron as actualizacións.'
 _actualizar
 _borratemp
 _fin_es
@@ -328,6 +334,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Обновить Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" "Внимание !!" "Пожалуйста, не выключайте оборудование. Система уведомит вас, когда будут сделаны обновления."
 _actualizar
 _borratemp
 _fin_es
@@ -340,7 +347,7 @@ fi
 
 # Francés
 
-function _menuPrincipal_ru()
+function _menuPrincipal_fr()
 {
 opPrincipal=$(
 zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
@@ -349,6 +356,7 @@ zenity --list --title "QUIRINUX-UPDATE" --width="600" --height="300" \
 "Salir" \
 )
 if [[ $opPrincipal == "Mettre à jour Quirinux" ]]; then
+notify-send -u critical -i "/opt/update/notify.png" "Attention !!" "Veuillez ne pas éteindre l'équipement. Le système vous avertira lorsque les mises à jour auront été effectuées."
 _actualizar
 _borratemp
 _fin_es
